@@ -77,7 +77,10 @@ class Modal extends Component {
                     last
                 },
                 location: {
-                    street,
+                    street: {
+                        name: streetName,
+                        number: streetNumber
+                    },
                     city,
                     state,
                     postcode,
@@ -121,7 +124,7 @@ class Modal extends Component {
                         </li>
                         <li>
                             <span><b>street:</b></span>
-                            {street}
+                            {streetName} {streetNumber}
                         </li>
 
                         <li>

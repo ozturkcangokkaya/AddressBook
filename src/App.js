@@ -116,28 +116,32 @@ class App extends Component {
         } = this;
 
         return (
-            <Main>
-                <Router>
-                    <UsersGrid
-                        path="/"
-                        users={users}
-                        nationalities={nationalities}
-                        isLoading={isLoading}
-                        hasMoreToLoad={hasMoreToLoad}
-                        isModalOpen={isModalOpen}
-                        toggleModal={toggleModal}
-                        selectedUser={selectedUser}
-                        searchValue={searchValue}
-                        handleSearch={handleSearch}
-                    />
+            <React.Fragment>
+                {isModalOpen ? <style>{`body{overflow: hidden}`}</style> : "test2"}
 
-                    <Settings
-                        path="settings"
-                        nationalities={nationalities}
-                        toggleNationality={toggleNationality}
-                    />
-                </Router>
-            </Main>
+                <Main>
+                    <Router>
+                        <UsersGrid
+                            path="/"
+                            users={users}
+                            nationalities={nationalities}
+                            isLoading={isLoading}
+                            hasMoreToLoad={hasMoreToLoad}
+                            isModalOpen={isModalOpen}
+                            toggleModal={toggleModal}
+                            selectedUser={selectedUser}
+                            searchValue={searchValue}
+                            handleSearch={handleSearch}
+                        />
+
+                        <Settings
+                            path="settings"
+                            nationalities={nationalities}
+                            toggleNationality={toggleNationality}
+                        />
+                    </Router>
+                </Main >
+            </React.Fragment>
         );
     }
 }
