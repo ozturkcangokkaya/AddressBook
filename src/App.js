@@ -75,6 +75,8 @@ class App extends Component {
     }
 
     toggleModal = (user) => {
+        document.body.classList.toggle("modal-open");
+
         this.setState({
             selectedUser: user,
             isModalOpen: !this.state.isModalOpen
@@ -117,8 +119,6 @@ class App extends Component {
 
         return (
             <React.Fragment>
-                {isModalOpen ? <style>{`body{overflow: hidden}`}</style> : "test2"}
-
                 <Main>
                     <Router>
                         <UsersGrid
